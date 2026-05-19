@@ -1,0 +1,273 @@
+.readerPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.subHeader {
+  position: sticky;
+  top: 64px;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  z-index: 9;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  height: 48px;
+}
+
+.backBtn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  color: var(--primary-color);
+}
+
+.chapterNav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navArrow {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--primary-color);
+  padding: 4px 10px;
+  border-radius: 50%;
+}
+
+.navArrow:hover {
+  background-color: var(--primary-light);
+}
+
+.titleInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.chapterBadge {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.bookmarkBtn {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.bookmarkBtn:hover {
+  background-color: var(--card-hover);
+  color: var(--primary-color);
+}
+
+.isBookmarked {
+  color: var(--primary-color);
+}
+
+/* Reader Canvas */
+.canvas {
+  max-width: 680px; /* Golden reading container width */
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+  width: 100%;
+  line-height: 1.75; /* Premium reading line-height */
+  transition: font-size 0.2s ease;
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+.sans {
+  font-family: var(--font-sans);
+}
+
+.versesList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.verseRow {
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.verseRow:hover {
+  background-color: var(--card-hover);
+}
+
+.selected {
+  box-shadow: 0 0 0 2px var(--primary-color);
+  background-color: var(--primary-light) !important;
+}
+
+.verseNum {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-right: 8px;
+  vertical-align: super;
+  user-select: none;
+}
+
+.verseText {
+  color: var(--text-color);
+}
+
+/* Highlight color configurations */
+.yellow {
+  background-color: var(--highlight-yellow) !important;
+}
+
+.blue {
+  background-color: var(--highlight-blue) !important;
+}
+
+.green {
+  background-color: var(--highlight-green) !important;
+}
+
+.pink {
+  background-color: var(--highlight-pink) !important;
+}
+
+/* Action Drawer for Selecting Colors */
+.actionDrawer {
+  position: fixed;
+  bottom: 60px; /* Floats above bottom Navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  box-shadow: var(--shadow-lg);
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 99;
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawerTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.closeBtn {
+  font-size: 1rem;
+  color: var(--text-muted);
+  padding: 4px;
+}
+
+.colorPills {
+  display: flex;
+  gap: 12px;
+  justify-content: space-around;
+  margin: 4px 0;
+}
+
+.colorPill {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease;
+}
+
+.colorPill:hover {
+  transform: scale(1.12);
+}
+
+.colorPill.yellow { background-color: rgba(255, 235, 59, 0.75) !important; }
+.colorPill.blue { background-color: rgba(33, 150, 243, 0.7) !important; }
+.colorPill.green { background-color: rgba(76, 175, 80, 0.7) !important; }
+.colorPill.pink { background-color: rgba(233, 30, 99, 0.7) !important; }
+
+.clearBtn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1.5px dashed var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.clearBtn:hover {
+  background-color: var(--card-hover);
+  color: var(--text-color);
+}
+
+.tapTip {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Spinner / Loading styles */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (min-width: 800px) {
+  .subHeader {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin-top: 16px;
+  }
+  
+  .actionDrawer {
+    bottom: 96px; /* adjusts for the floating island desktop nav */
+    border-radius: var(--border-radius);
+  }
+}

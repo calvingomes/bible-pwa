@@ -1,0 +1,216 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Category Selection Tabs */
+.tabs {
+  display: flex;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 76px; /* Align just under header sticky box */
+  z-index: 10;
+}
+
+.tabBtn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.25s ease;
+  color: var(--text-muted);
+}
+
+.tabBtn:hover {
+  color: var(--text-color);
+  background-color: var(--card-hover);
+}
+
+.activeTab {
+  background-color: var(--primary-color);
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Category Sections */
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.categoryHeading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Book Cards */
+.bookCard {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.bookCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  background-color: var(--card-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.bookHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  text-align: left;
+}
+
+.bookHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bookIcon {
+  font-size: 1.5rem;
+}
+
+.bookNames {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookMainName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.bookSubName {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.chaptersCount {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  background-color: var(--bg-color);
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+/* Expanded State & Chapters Grid */
+.expandedCard {
+  border-color: var(--primary-color);
+  background-color: var(--card-bg) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.chaptersGrid {
+  padding: 16px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  transition: all 0.3s ease;
+}
+
+.selectHeading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.chaptersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+  gap: 8px;
+}
+
+.chapterBtn {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.chapterBtn:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+  transform: scale(1.08);
+}
+
+/* Spinner / Loading styles */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (min-width: 600px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
