@@ -1,0 +1,166 @@
+/* Global custom theme system for the Offline Catholic Bible PWA */
+
+:root {
+  /* HSL Colors: Light Mode */
+  --bg-color: #f7f6f3;
+  --text-color: #2a2a2a;
+  --text-muted: #666666;
+  --primary-color: #b37d14; /* Warm Gold/Amber */
+  --primary-light: #fdf6e2;
+  --primary-hover: #96660d;
+  --surface-color: #ffffff;
+  --border-color: #e5e2db;
+  --card-bg: #ffffff;
+  --card-hover: #f1ede5;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  
+  --highlight-yellow: rgba(255, 235, 59, 0.4);
+  --highlight-blue: rgba(33, 150, 243, 0.35);
+  --highlight-green: rgba(76, 175, 80, 0.35);
+  --highlight-pink: rgba(233, 30, 99, 0.35);
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+
+  --font-serif: "Georgia", "Cambria", "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --border-radius: 12px;
+}
+
+[data-theme="dark"] {
+  /* HSL Colors: Dark Mode */
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --text-muted: #999999;
+  --primary-color: #dca738; /* Glowing warm gold */
+  --primary-light: #2c2514;
+  --primary-hover: #f1c255;
+  --surface-color: #1d1d1d;
+  --border-color: #2c2c2c;
+  --card-bg: #1d1d1d;
+  --card-hover: #262626;
+  --nav-bg: rgba(18, 18, 18, 0.85);
+  
+  --highlight-yellow: rgba(255, 235, 59, 0.25);
+  --highlight-blue: rgba(33, 150, 243, 0.25);
+  --highlight-green: rgba(76, 175, 80, 0.25);
+  --highlight-pink: rgba(233, 30, 99, 0.25);
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+[data-theme="sepia"] {
+  /* HSL Colors: Sepia Mode */
+  --bg-color: #f4ecd8;
+  --text-color: #433422;
+  --text-muted: #73624e;
+  --primary-color: #8c520a; /* Deep brown gold */
+  --primary-light: #eadfca;
+  --primary-hover: #6a3d07;
+  --surface-color: #faf4e8;
+  --border-color: #decfa8;
+  --card-bg: #faf4e8;
+  --card-hover: #f1e4c7;
+  --nav-bg: rgba(244, 236, 216, 0.85);
+  
+  --highlight-yellow: rgba(24bc, 100, 30, 0.35); /* customized sepia-look highlight colors */
+  --highlight-yellow: rgba(212, 172, 13, 0.35);
+  --highlight-blue: rgba(41, 128, 185, 0.3);
+  --highlight-green: rgba(39, 174, 96, 0.3);
+  --highlight-pink: rgba(192, 57, 43, 0.25);
+  
+  --shadow-sm: 0 1px 3px rgba(67,52,34,0.05);
+  --shadow-md: 0 4px 12px rgba(67,52,34,0.08);
+  --shadow-lg: 0 10px 25px rgba(67,52,34,0.12);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Global utility animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Container limits for premium readability */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}

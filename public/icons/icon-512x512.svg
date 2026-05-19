@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Squircle Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dca738" />
+      <stop offset="50%" stop-color="#b37d14" />
+      <stop offset="100%" stop-color="#734e00" />
+    </linearGradient>
+    
+    <!-- Inner Cross Shadow Gradient -->
+    <linearGradient id="crossGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f2ebd9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Maskable squircle boundary padding -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#goldGrad)" />
+  
+  <!-- Subtle halo behind cross -->
+  <circle cx="256" cy="230" r="90" fill="none" stroke="#ffffff" stroke-width="6" stroke-opacity="0.25" />
+  <circle cx="256" cy="230" r="110" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.15" stroke-dasharray="8 8" />
+
+  <!-- Bible Graphic Base Silhouette -->
+  <path d="M140 370 C140 350, 200 350, 256 360 C312 350, 372 350, 372 370 L372 400 C372 385, 312 385, 256 395 C200 385, 140 385, 140 400 Z" fill="#ffffff" fill-opacity="0.2" />
+
+  <!-- Premium Sculpted Latin Cross -->
+  <g filter="drop-shadow(0px 8px 16px rgba(0,0,0,0.35))">
+    <!-- Vertical bar -->
+    <path d="M236 100 H276 V360 H236 Z" fill="url(#crossGrad)" rx="6" />
+    <!-- Horizontal bar -->
+    <path d="M160 176 H352 V216 H160 Z" fill="url(#crossGrad)" rx="6" />
+  </g>
+
+  <!-- Central Highlight Dot -->
+  <circle cx="256" cy="196" r="6" fill="#b37d14" />
+</svg>
