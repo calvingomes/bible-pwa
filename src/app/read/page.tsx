@@ -4,7 +4,6 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
-import { useSettings } from '@/context/SettingsContext';
 import { Book, BookData, Verse, Bookmark, Highlight } from '@/types/bible';
 import { ArrowLeft, ChevronLeft, ChevronRight, Bookmark as BookmarkIcon, Trash2, X, Loader2 } from 'lucide-react';
 import styles from './page.module.css';
@@ -13,7 +12,6 @@ function ReaderContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { language, t } = useLanguage();
-  const { fontSize, fontType } = useSettings();
 
   const bookId = searchParams.get('book') || 'gen';
   const chapterNum = Number(searchParams.get('chapter')) || 1;
@@ -173,8 +171,6 @@ function ReaderContent() {
     );
   }
 
-  const fontClass = fontType === 'serif' ? styles.serif : styles.sans;
-
   return (
     <div className={`${styles.readerPage} animate-fade`}>
       {/* Reader Nav SubHeader */}
@@ -206,7 +202,7 @@ function ReaderContent() {
       </div>
 
       {/* Reader Main Body */}
-      <div className={`${styles.canvas} ${fontClass}`} style={{ fontSize: `${fontSize}px` }}>
+      <div className={`${styles.canvas} ${styles.serif}`}>
         {chapterData ? (
           <div className={styles.versesList}>
             {chapterData.verses.map((verse) => {

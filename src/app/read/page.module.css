@@ -87,7 +87,7 @@
   padding: 24px 20px 80px;
   width: 100%;
   line-height: 1.75; /* Premium reading line-height */
-  transition: font-size 0.2s ease;
+  font-size: 1.15rem; /* High-readability cozy default size */
 }
 
 .serif {

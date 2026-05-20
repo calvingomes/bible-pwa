@@ -17,10 +17,6 @@ type TranslationKeys =
   | 'themeLight'
   | 'themeDark'
   | 'themeSepia'
-  | 'fontSize'
-  | 'fontType'
-  | 'serif'
-  | 'sansSerif'
   | 'searchPlaceholder'
   | 'searchResultsCount'
   | 'noResults'
@@ -68,10 +64,6 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     themeLight: "Light",
     themeDark: "Dark",
     themeSepia: "Sepia",
-    fontSize: "Font Size",
-    fontType: "Font Style",
-    serif: "Classic (Serif)",
-    sansSerif: "Modern (Sans)",
     searchPlaceholder: "Search keywords (e.g. faith, love, grace)...",
     searchResultsCount: "Found {count} results",
     noResults: "No results found. Try another term.",
@@ -118,10 +110,6 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     themeLight: "பகல்",
     themeDark: "இரவு",
     themeSepia: "செபியா",
-    fontSize: "எழுத்து அளவு",
-    fontType: "எழுத்து வடிவம்",
-    serif: "மரபுவழி (செரிஃப்)",
-    sansSerif: "நவீன (சான்ஸ்)",
     searchPlaceholder: "தேட வேண்டிய சொற்கள் (எ.கா. விசுவாசம், அன்பு, அருள்)...",
     searchResultsCount: "{count} முடிவுகள் கண்டறியப்பட்டன",
     noResults: "முடிவுகள் எதுவும் இல்லை. வேறு சொல்லை முயலவும்.",

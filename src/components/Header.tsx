@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
-import { useSettings, Theme, FontType } from '@/context/SettingsContext';
+import { useSettings, Theme } from '@/context/SettingsContext';
 import { Settings, BookOpen, X } from 'lucide-react';
 import styles from './Header.module.css';
 
 export const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
-  const { theme, setTheme, fontSize, setFontSize, fontType, setFontType } = useSettings();
+  const { theme, setTheme } = useSettings();
   const [showSettings, setShowSettings] = useState(false);
   const pathname = usePathname();
 
@@ -63,38 +63,6 @@ export const Header: React.FC = () => {
                   {tMode === 'sepia' && t('themeSepia')}
                 </button>
               ))}
-            </div>
-          </div>
-
-          <div className={styles.settingsRow}>
-            <span className={styles.settingsLabel}>{t('fontSize')}: {fontSize}px</span>
-            <div className={styles.sliderContainer}>
-              <input
-                type="range"
-                min="14"
-                max="26"
-                value={fontSize}
-                onChange={(e) => setFontSize(Number(e.target.value))}
-                className={styles.slider}
-              />
-            </div>
-          </div>
-
-          <div className={styles.settingsRow}>
-            <span className={styles.settingsLabel}>{t('fontType')}:</span>
-            <div className={styles.fontGroup}>
-              <button
-                onClick={() => setFontType('serif')}
-                className={`${styles.fontBtn} ${fontType === 'serif' ? styles.activeFont : ''} ${styles.serifFont}`}
-              >
-                {t('serif')}
-              </button>
-              <button
-                onClick={() => setFontType('sans')}
-                className={`${styles.fontBtn} ${fontType === 'sans' ? styles.activeFont : ''} ${styles.sansFont}`}
-              >
-                {t('sansSerif')}
-              </button>
             </div>
           </div>
 
