@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSettings, Theme, FontType } from '@/context/SettingsContext';
+import { Settings, BookOpen, X } from 'lucide-react';
 import styles from './Header.module.css';
 
 export const Header: React.FC = () => {
@@ -21,7 +22,7 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.headerTop}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>✝</span>
+          <BookOpen className={styles.logoIcon} size={24} strokeWidth={2.5} />
           <h1 className={styles.title}>{t('appTitle')}</h1>
         </Link>
 
@@ -41,7 +42,7 @@ export const Header: React.FC = () => {
             aria-label="Toggle Settings"
             title={t('settings')}
           >
-            ⚙️
+            <Settings size={20} className={styles.settingsIcon} />
           </button>
         </div>
       </div>
@@ -98,6 +99,7 @@ export const Header: React.FC = () => {
           </div>
 
           <button onClick={() => setShowSettings(false)} className={styles.closeSettingsBtn}>
+            <X size={16} style={{ marginRight: '6px' }} />
             {t('close')}
           </button>
         </div>

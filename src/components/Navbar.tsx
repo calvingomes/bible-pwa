@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
+import { BookOpen, Search, BookMarked } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 export const Navbar: React.FC = () => {
@@ -11,9 +12,9 @@ export const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/', label: t('books'), icon: '📖' },
-    { href: '/search', label: t('search'), icon: '🔍' },
-    { href: '/journal', label: t('bookmarks'), icon: '🔖' }
+    { href: '/', label: t('books'), icon: <BookOpen size={20} strokeWidth={2} /> },
+    { href: '/search', label: t('search'), icon: <Search size={20} strokeWidth={2} /> },
+    { href: '/journal', label: t('bookmarks'), icon: <BookMarked size={20} strokeWidth={2} /> }
   ];
 
   return (

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSettings } from '@/context/SettingsContext';
 import { Book, BookData, Verse, Bookmark, Highlight } from '@/types/bible';
+import { ArrowLeft, ChevronLeft, ChevronRight, Bookmark as BookmarkIcon, Trash2, X, Loader2 } from 'lucide-react';
 import styles from './page.module.css';
 
 function ReaderContent() {
@@ -167,7 +168,7 @@ function ReaderContent() {
   if (loading || !currentBook) {
     return (
       <div className={styles.loadingContainer}>
-        <div className={styles.spinner} />
+        <Loader2 className={styles.spinner} size={40} />
       </div>
     );
   }
@@ -179,19 +180,19 @@ function ReaderContent() {
       {/* Reader Nav SubHeader */}
       <div className={styles.subHeader}>
         <Link href="/" className={styles.backBtn} title={t('goBack')}>
-          ←
+          <ArrowLeft size={20} />
         </Link>
         
         <div className={styles.chapterNav}>
           <button onClick={() => navigateChapter('prev')} className={styles.navArrow} title="Previous Chapter">
-            ‹
+            <ChevronLeft size={24} />
           </button>
           <div className={styles.titleInfo}>
             <span className={styles.bookTitle}>{currentBookName}</span>
             <span className={styles.chapterBadge}>{t('chapter')} {chapterNum}</span>
           </div>
           <button onClick={() => navigateChapter('next')} className={styles.navArrow} title="Next Chapter">
-            ›
+            <ChevronRight size={24} />
           </button>
         </div>
 
@@ -200,7 +201,7 @@ function ReaderContent() {
           className={`${styles.bookmarkBtn} ${isBookmarked ? styles.isBookmarked : ''}`}
           title={isBookmarked ? t('removeBookmark') : t('bookmarkThisPage')}
         >
-          {isBookmarked ? '🔖' : 'bookmark_border'}
+          <BookmarkIcon size={20} fill={isBookmarked ? 'var(--primary-color)' : 'none'} />
         </button>
       </div>
 
@@ -237,7 +238,7 @@ function ReaderContent() {
               {currentBookName} {chapterNum}:{selectedVerse}
             </span>
             <button onClick={() => setSelectedVerse(null)} className={styles.closeBtn}>
-              ✕
+              <X size={18} />
             </button>
           </div>
           
@@ -254,7 +255,8 @@ function ReaderContent() {
 
           {getVerseHighlight(selectedVerse) && (
             <button onClick={removeHighlight} className={styles.clearBtn}>
-              🗑️ Remove Color
+              <Trash2 size={16} style={{ marginRight: '6px' }} />
+              {language === 'en' ? 'Remove Color' : 'வண்ணம் நீக்கு'}
             </button>
           )}
 
@@ -269,7 +271,7 @@ export default function ReaderPage() {
   return (
     <Suspense fallback={
       <div className={styles.loadingContainer}>
-        <div className={styles.spinner} />
+        <Loader2 className={styles.spinner} size={40} />
       </div>
     }>
       <ReaderContent />

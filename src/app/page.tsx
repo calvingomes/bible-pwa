@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { Book } from '@/types/bible';
+import { Book as BookIcon, Loader2 } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function HomePage() {
@@ -68,7 +69,7 @@ export default function HomePage() {
   if (loading) {
     return (
       <div className={styles.loadingContainer}>
-        <div className={styles.spinner} />
+        <Loader2 className={styles.spinner} size={40} />
       </div>
     );
   }
@@ -118,7 +119,7 @@ export default function HomePage() {
                       className={styles.bookHeader}
                     >
                       <div className={styles.bookHeaderLeft}>
-                        <span className={styles.bookIcon}>📖</span>
+                        <BookIcon className={styles.bookIcon} size={20} />
                         <div className={styles.bookNames}>
                           <span className={styles.bookMainName}>{bookName}</span>
                           {language === 'ta' && (

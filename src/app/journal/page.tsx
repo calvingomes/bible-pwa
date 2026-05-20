@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { Bookmark, Highlight } from '@/types/bible';
+import { Trash2, Bookmark as BookmarkIcon, X, Palette } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function JournalPage() {
@@ -77,8 +78,9 @@ export default function JournalPage() {
       {((activeSubTab === 'bookmarks' && bookmarks.length > 0) || 
         (activeSubTab === 'highlights' && highlights.length > 0)) && (
         <div className={styles.actionBar}>
-          <button onClick={handleClearAll} className={styles.clearAllBtn}>
-            🗑️ {t('clearAll')}
+          <button onClick={handleClearAll} className={styles.clearAllBtn} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Trash2 size={16} />
+            {t('clearAll')}
           </button>
         </div>
       )}
@@ -95,7 +97,7 @@ export default function JournalPage() {
                   className={styles.bookmarkCard}
                 >
                   <div className={styles.bookmarkMeta}>
-                    <span className={styles.bookmarkIcon}>🔖</span>
+                    <BookmarkIcon size={20} className={styles.bookmarkIcon} style={{ color: 'var(--primary-color)' }} />
                     <div className={styles.bookmarkText}>
                       <span className={styles.bookmarkBookName}>
                         {bookmark.bookName}
@@ -110,14 +112,14 @@ export default function JournalPage() {
                     className={styles.deleteBtn}
                     title="Remove Bookmark"
                   >
-                    ✕
+                    <X size={16} />
                   </button>
                 </Link>
               ))}
             </div>
           ) : (
             <div className={styles.emptyState}>
-              <span className={styles.emptyIcon}>🔖</span>
+              <BookmarkIcon size={48} className={styles.emptyIcon} style={{ color: 'var(--text-muted)', marginBottom: '12px' }} />
               <p className={styles.emptyText}>{t('noBookmarks')}</p>
             </div>
           )
@@ -139,7 +141,7 @@ export default function JournalPage() {
                       className={styles.deleteBtn}
                       title="Remove Highlight"
                     >
-                      ✕
+                      <X size={16} />
                     </button>
                   </div>
                   <p className={styles.highlightText}>
@@ -151,15 +153,16 @@ export default function JournalPage() {
             </div>
           ) : (
             <div className={styles.emptyState}>
-              <span className={styles.emptyIcon}>🎨</span>
+              <Palette size={48} className={styles.emptyIcon} style={{ color: 'var(--text-muted)', marginBottom: '12px' }} />
               <p className={styles.emptyText}>
                 {language === 'en' 
                   ? 'No highlighted verses yet.' 
                   : 'வண்ணமிடப்பட்ட வசனங்கள் இன்னும் சேமிக்கப்படவில்லை.'}
               </p>
             </div>
-          ))}
-        </div>
+          )
+        )}
       </div>
+    </div>
   );
 }

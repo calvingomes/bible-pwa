@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { Book, BookData, Verse } from '@/types/bible';
+import { Search, X, Loader2 } from 'lucide-react';
 import styles from './page.module.css';
 
 interface SearchResult {
@@ -145,7 +146,7 @@ export default function SearchPage() {
               className={styles.clearBtn}
               title={t('clearSearch')}
             >
-              ✕
+              <X size={16} />
             </button>
           )}
         </div>
@@ -153,7 +154,9 @@ export default function SearchPage() {
           type="submit" 
           className={styles.searchSubmit}
           disabled={isSearching || !query.trim()}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
         >
+          {isSearching ? <Loader2 size={16} className="spinner" /> : <Search size={16} />}
           {t('search')}
         </button>
       </form>
