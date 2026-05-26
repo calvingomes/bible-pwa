@@ -145,8 +145,9 @@
   border-color: #decfa8;
 }
 
-.activeTheme {
-  border-color: var(--primary-color) !important;
+.activeTheme,
+.themeBtn.activeTheme {
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 2px var(--primary-light);
 }
 

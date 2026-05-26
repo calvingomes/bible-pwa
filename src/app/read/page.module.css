@@ -114,13 +114,8 @@
   width: 100%;
 }
 
-.verseRow:hover {
+.verseRow:not(.selected):hover {
   background-color: var(--card-hover);
-}
-
-.selected {
-  box-shadow: 0 0 0 2px var(--primary-color);
-  background-color: var(--primary-light) !important;
 }
 
 .verseNum {
@@ -137,20 +132,31 @@
 }
 
 /* Highlight color configurations */
-.yellow {
-  background-color: var(--highlight-yellow) !important;
+.yellow,
+.verseRow.yellow {
+  background-color: var(--highlight-yellow);
 }
 
-.blue {
-  background-color: var(--highlight-blue) !important;
+.blue,
+.verseRow.blue {
+  background-color: var(--highlight-blue);
 }
 
-.green {
-  background-color: var(--highlight-green) !important;
+.green,
+.verseRow.green {
+  background-color: var(--highlight-green);
 }
 
-.pink {
-  background-color: var(--highlight-pink) !important;
+.pink,
+.verseRow.pink {
+  background-color: var(--highlight-pink);
+}
+
+/* Selected state takes precedence, defined after highlights */
+.selected,
+.verseRow.selected {
+  box-shadow: 0 0 0 2px var(--primary-color);
+  background-color: var(--primary-light);
 }
 
 /* Action Drawer for Selecting Colors */
@@ -210,10 +216,10 @@
   transform: scale(1.12);
 }
 
-.colorPill.yellow { background-color: rgba(255, 235, 59, 0.75) !important; }
-.colorPill.blue { background-color: rgba(33, 150, 243, 0.7) !important; }
-.colorPill.green { background-color: rgba(76, 175, 80, 0.7) !important; }
-.colorPill.pink { background-color: rgba(233, 30, 99, 0.7) !important; }
+.colorPill.yellow { background-color: rgba(255, 235, 59, 0.75); }
+.colorPill.blue { background-color: rgba(33, 150, 243, 0.7); }
+.colorPill.green { background-color: rgba(76, 175, 80, 0.7); }
+.colorPill.pink { background-color: rgba(233, 30, 99, 0.7); }
 
 .clearBtn {
   width: 100%;

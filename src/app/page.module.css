@@ -40,14 +40,14 @@
 .activeTab,
 .tabBtn.activeTab {
   background-color: var(--primary-color);
-  color: #ffffff !important;
+  color: #ffffff;
   box-shadow: var(--shadow-sm);
 }
 
 .activeTab:hover,
 .tabBtn.activeTab:hover {
   background-color: var(--primary-hover);
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 /* Category Sections */
@@ -142,10 +142,15 @@
 }
 
 /* Expanded State & Chapters Grid */
-.expandedCard {
+.expandedCard,
+.bookCard.expandedCard {
   border-color: var(--primary-color);
-  background-color: var(--card-bg) !important;
+  background-color: var(--card-bg);
   box-shadow: var(--shadow-md);
+}
+
+.bookCard.expandedCard:hover {
+  background-color: var(--card-bg);
 }
 
 .chaptersGrid {
