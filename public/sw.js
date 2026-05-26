@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bible-pwa-v1';
+const CACHE_NAME = 'bible-pwa-v2';
 const STATIC_ASSETS = [
   '/',
   '/search',
