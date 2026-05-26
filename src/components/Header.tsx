@@ -65,11 +65,6 @@ export const Header: React.FC = () => {
               ))}
             </div>
           </div>
-
-          <button onClick={() => setShowSettings(false)} className={styles.closeSettingsBtn}>
-            <X size={16} style={{ marginRight: '6px' }} />
-            {t('close')}
-          </button>
         </div>
       )}
     </header>
