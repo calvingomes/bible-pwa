@@ -11,7 +11,7 @@ export default function HomePage() {
   const { language, t } = useLanguage();
   const [books, setBooks] = useState<Book[]>([]);
   const [expandedBook, setExpandedBook] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'OT' | 'Deuterocanon' | 'NT'>('OT');
+  const [activeTab, setActiveTab] = useState<'OT' | 'NT'>('OT');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,13 +42,11 @@ export default function HomePage() {
   };
 
   // Filter books according to tabs
-  const getOTBooks = () => books.filter((b) => b.testament === 'OT' && !b.deuterocanon);
-  const getDeutBooks = () => books.filter((b) => b.deuterocanon);
+  const getOTBooks = () => books.filter((b) => b.testament === 'OT');
   const getNTBooks = () => books.filter((b) => b.testament === 'NT');
 
   const filteredBooks = () => {
     if (activeTab === 'OT') return getOTBooks();
-    if (activeTab === 'Deuterocanon') return getDeutBooks();
     return getNTBooks();
   };
 
@@ -83,12 +81,6 @@ export default function HomePage() {
           className={`${styles.tabBtn} ${activeTab === 'OT' ? styles.activeTab : ''}`}
         >
           {t('oldTestament')}
-        </button>
-        <button
-          onClick={() => { setActiveTab('Deuterocanon'); setExpandedBook(null); }}
-          className={`${styles.tabBtn} ${activeTab === 'Deuterocanon' ? styles.activeTab : ''}`}
-        >
-          {t('deuterocanon')}
         </button>
         <button
           onClick={() => { setActiveTab('NT'); setExpandedBook(null); }}

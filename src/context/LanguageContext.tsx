@@ -11,7 +11,6 @@ type TranslationKeys =
   | 'books'
   | 'oldTestament'
   | 'newTestament'
-  | 'deuterocanon'
   | 'language'
   | 'theme'
   | 'themeLight'
@@ -58,7 +57,6 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     books: "Books",
     oldTestament: "Old Testament",
     newTestament: "New Testament",
-    deuterocanon: "Deuterocanon",
     language: "Language",
     theme: "Theme",
     themeLight: "Light",
@@ -104,7 +102,6 @@ const translations: Record<Language, Record<TranslationKeys, string>> = {
     books: "திருவிவிலிய நூல்கள்",
     oldTestament: "பழைய ஏற்பாடு",
     newTestament: "புதிய ஏற்பாடு",
-    deuterocanon: "இணைத்திருமுறை நூல்கள்",
     language: "மொழி",
     theme: "வடிவம்",
     themeLight: "பகல்",

@@ -144,24 +144,6 @@
     "deuterocanon": false
   },
   {
-    "id": "tob",
-    "nameEn": "Tobit",
-    "nameTa": "தோபித்து",
-    "testament": "OT",
-    "category": "Historical",
-    "chapters": 14,
-    "deuterocanon": true
-  },
-  {
-    "id": "jdt",
-    "nameEn": "Judith",
-    "nameTa": "யூதித்து",
-    "testament": "OT",
-    "category": "Historical",
-    "chapters": 16,
-    "deuterocanon": true
-  },
-  {
     "id": "est",
     "nameEn": "Esther",
     "nameTa": "எஸ்தர்",
@@ -169,24 +151,6 @@
     "category": "Historical",
     "chapters": 10,
     "deuterocanon": false
-  },
-  {
-    "id": "1ma",
-    "nameEn": "1 Maccabees",
-    "nameTa": "1 மக்கபேயர்",
-    "testament": "OT",
-    "category": "Historical",
-    "chapters": 16,
-    "deuterocanon": true
-  },
-  {
-    "id": "2ma",
-    "nameEn": "2 Maccabees",
-    "nameTa": "2 மக்கபேயர்",
-    "testament": "OT",
-    "category": "Historical",
-    "chapters": 15,
-    "deuterocanon": true
   },
   {
     "id": "job",
@@ -234,24 +198,6 @@
     "deuterocanon": false
   },
   {
-    "id": "wis",
-    "nameEn": "Wisdom of Solomon",
-    "nameTa": "சாலமோனின் ஞானம்",
-    "testament": "OT",
-    "category": "Wisdom",
-    "chapters": 19,
-    "deuterocanon": true
-  },
-  {
-    "id": "sir",
-    "nameEn": "Sirach",
-    "nameTa": "சீராக்",
-    "testament": "OT",
-    "category": "Wisdom",
-    "chapters": 51,
-    "deuterocanon": true
-  },
-  {
     "id": "isa",
     "nameEn": "Isaiah",
     "nameTa": "எசாயா",
@@ -277,15 +223,6 @@
     "category": "Prophets",
     "chapters": 5,
     "deuterocanon": false
-  },
-  {
-    "id": "bar",
-    "nameEn": "Baruch",
-    "nameTa": "பாரூக்",
-    "testament": "OT",
-    "category": "Prophets",
-    "chapters": 6,
-    "deuterocanon": true
   },
   {
     "id": "ezk",
