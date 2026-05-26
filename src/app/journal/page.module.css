@@ -33,10 +33,17 @@
   background-color: var(--card-hover);
 }
 
-.activeSubTab {
+.activeSubTab,
+.subTabBtn.activeSubTab {
   background-color: var(--primary-light);
   color: var(--primary-color) !important;
   box-shadow: var(--shadow-sm);
+}
+
+.activeSubTab:hover,
+.subTabBtn.activeSubTab:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-hover) !important;
 }
 
 /* Clear Action Bar */

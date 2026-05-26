@@ -37,10 +37,17 @@
   background-color: var(--card-hover);
 }
 
-.activeTab {
+.activeTab,
+.tabBtn.activeTab {
   background-color: var(--primary-color);
   color: #ffffff !important;
   box-shadow: var(--shadow-sm);
+}
+
+.activeTab:hover,
+.tabBtn.activeTab:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff !important;
 }
 
 /* Category Sections */
